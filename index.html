@@ -5,11 +5,22 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="#f47721" name="theme-color"/>
+<meta name="color-scheme" content="light"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Neferdidi Milkteashop | Freshly Brewed, Made Your Way"/>
+<meta property="og:description" content="Explore Neferdidi's milk tea, fruit tea, coffee, and shakes. Find a branch near you."/>
+<meta property="og:url" content="https://neferdidi-milktea.github.io/Website-1/"/>
+<meta property="og:image" content="https://neferdidi-milktea.github.io/Website-1/neferdidi-mascot.webp"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Neferdidi Milkteashop"/>
+<meta name="twitter:description" content="Explore the menu and find your nearest Neferdidi branch."/>
+<link rel="canonical" href="https://neferdidi-milktea.github.io/Website-1/"/>
 <meta content="Neferdidi Milkteashop — freshly brewed milk tea, fruit tea, coffee and shakes. Find your nearest branch across Egypt." name="description"/>
 <title>Neferdidi | Milkteashop — Freshly Brewed, Made Your Way</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Outfit:wght@600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link rel="preload" as="image" href="neferdidi-mascot.webp" fetchpriority="high"/>
 <style>
 :root{
   --orange:#f47721;--orange-dark:#d95d0d;--orange-soft:#fff1e6;
@@ -37,6 +48,21 @@ h1,h2,h3,h4{font-family:'Outfit','Inter',sans-serif;line-height:1.15}
 .btn-dark:hover{background:#000;transform:translateY(-2px)}
 .btn-outline{border:1px solid var(--line);color:var(--ink);background:#fff}
 .btn-outline:hover{border-color:var(--orange);color:var(--orange-dark)}
+
+/* ---------- Franchise ---------- */
+.franchise{background:#fff}
+.franchise-box{position:relative;overflow:hidden;display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:30px;background:var(--black);color:#fff;border-radius:24px;padding:clamp(30px,5vw,60px);box-shadow:var(--shadow)}
+.franchise-box::before{content:"";position:absolute;inset:0;background:radial-gradient(520px 380px at 100% 0%,rgba(244,119,33,.35),transparent 70%)}
+.franchise-box>*{position:relative;z-index:1}
+.franchise-box h2{font-size:clamp(28px,4.2vw,46px);letter-spacing:-1.4px;font-weight:800;margin:16px 0 14px}
+.franchise-box p{color:#b9b9b9;font-size:16.5px;line-height:1.7;max-width:520px}
+.franchise-phone{display:block;font-family:'Outfit','Inter',sans-serif;font-weight:900;font-size:clamp(26px,3.6vw,38px);letter-spacing:1px;color:var(--orange);margin:22px 0 4px;direction:ltr}
+.franchise-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.btn-wa{background:#25d366;color:#fff;box-shadow:0 10px 24px rgba(37,211,102,.28)}
+.btn-wa:hover{background:#1ebe5b;transform:translateY(-2px)}
+.franchise-art{display:grid;place-items:center}
+.franchise-art img{width:min(260px,100%);height:auto;filter:drop-shadow(0 18px 30px rgba(0,0,0,.4))}
+@media(max-width:820px){.franchise-box{grid-template-columns:1fr;text-align:center}.franchise-box p{margin:0 auto}.franchise-box .eyebrow{justify-content:center}.franchise-art{order:-1}.franchise-art img{width:min(210px,62%)}.franchise-actions{justify-content:center}.franchise-actions .btn{flex:1 1 150px}}
 
 /* ---------- Header ---------- */
 .topbar{height:6px;background:linear-gradient(90deg,var(--orange),#ffa15c,var(--orange))}
@@ -343,6 +369,37 @@ footer{background:#0d0d0d;color:#8c8c8c;padding:46px 0 30px;font-size:13.5px}
 .menu-section .menu-grid.menu-carousel .dish-photo-fallback{height:128px;min-height:128px;width:100%;display:grid;place-items:center;background:linear-gradient(145deg,#fff7ef,#fffdfb);border:1px solid #f7e6d7;border-radius:10px;font-size:34px;margin:0 0 3px}
 @media(max-width:700px){.menu-section .menu-grid.menu-carousel .dish-photo-fallback{height:122px;min-height:122px}}
 
+
+/* ---------- Quality, accessibility and mobile polish ---------- */
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+button,a,input,select{-webkit-tap-highlight-color:transparent}
+.btn,.map-btn,.tab,.menu-arrow,.nfd-arrow,.nfd-garrow{touch-action:manipulation}
+.brand-logo{width:auto;height:38px;object-fit:contain}
+.cup{will-change:transform}
+.menu-section .menu-grid.menu-carousel{scrollbar-gutter:stable;}
+.menu-section .menu-grid.menu-carousel .dish{overflow:hidden}
+.menu-section .menu-grid.menu-carousel .dish-photo{aspect-ratio:1.35/1;object-fit:contain}
+.menu-search::placeholder{color:#91877f;opacity:1}
+.menu-tools{position:relative}
+.menu-results{min-height:18px}
+.nfd-gallery figure{background:#241b15;cursor:zoom-in}
+.nfd-gallery img{object-fit:cover}
+.branch:focus-within{border-color:var(--orange)}
+@media(max-width:960px){
+ .nav-wrap{padding-top:11px;padding-bottom:11px}
+ .nav{max-height:calc(100dvh - 76px);overflow-y:auto}
+}
+@media(max-width:600px){
+ .container{padding-left:5vw;padding-right:5vw}
+ .hero{padding-top:52px;padding-bottom:58px}
+ .hero p.lead{font-size:15px}
+ .hero-actions .btn{flex:1 1 145px;padding:13px 14px}
+ .section{padding-top:56px;padding-bottom:56px}
+ .menu-section .menu-grid.menu-carousel .dish{flex-basis:min(68vw,238px)}
+ .nfd-gallery figure{height:270px}
+}
+@media(hover:none){.branch:hover,.menu-section .menu-grid.menu-carousel .dish:hover{transform:none;box-shadow:none}}
+
 </style>
 </head>
 <body>
@@ -351,7 +408,7 @@ footer{background:#0d0d0d;color:#8c8c8c;padding:46px 0 30px;font-size:13.5px}
 <header class="site-header" id="siteHeader">
 <div class="nav-wrap">
 <a aria-label="Neferdidi home" class="brand" href="#home">
-<img alt="" class="brand-logo" src="neferdidi-logo-mark.png" width="350" height="278"/>
+<img alt="Neferdidi logo" class="brand-logo" src="neferdidi-logo-mark.webp" width="350" height="278" decoding="async"/>
 <span class="brand-text">NEFERDIDI<small>MILKTEASHOP</small></span>
 </a>
 <nav aria-label="Main navigation" class="nav" id="nav">
@@ -360,10 +417,11 @@ footer{background:#0d0d0d;color:#8c8c8c;padding:46px 0 30px;font-size:13.5px}
 <a class="nav-link" href="#menu">Menu</a>
 <a class="nav-link" href="#branches">Branches</a>
 <a class="nav-link" href="#events">Events</a>
+<a class="nav-link" href="#franchise">Franchise</a>
 <a class="nav-link" href="#contact">Contact</a>
 </nav>
 <a class="btn btn-primary header-cta" href="#branches">Find a branch</a>
-<button aria-controls="nav" aria-expanded="false" aria-label="Open menu" class="burger" id="burger">
+<button type="button" aria-controls="nav" aria-expanded="false" aria-label="Open menu" class="burger" id="burger">
 <span></span><span></span><span></span>
 </button>
 </div>
@@ -386,7 +444,7 @@ footer{background:#0d0d0d;color:#8c8c8c;padding:46px 0 30px;font-size:13.5px}
 </div>
 </div>
 <div aria-hidden="true" class="hero-art">
-<img alt="" class="cup" src="neferdidi-mascot.png" width="729" height="1284" decoding="async"/>
+<img alt="" class="cup" src="neferdidi-mascot.webp" width="399" height="760" decoding="async" fetchpriority="high"/>
 </div>
 </div>
 </section>
@@ -446,84 +504,84 @@ footer{background:#0d0d0d;color:#8c8c8c;padding:46px 0 30px;font-size:13.5px}
 </div>
 <div class="menu-tools">
 <div class="menu-search-wrap"><span class="menu-search-icon" aria-hidden="true">⌕</span><input id="menuSearch" class="menu-search" type="search" placeholder="Search drinks, tea, coffee..." aria-label="Search menu items" autocomplete="off"/></div>
-<span class="menu-results" id="menuResults" aria-live="polite">Loading menu…</span>
+<span class="menu-results" id="menuResults" aria-live="polite">Preparing menu…</span>
 </div>
 <div class="menu-grid reveal" id="menuGrid">
 <!-- FRUIT & SLUSH -->
 <article class="dish" data-cat="fruit">
-<img alt="Mango Coconut Milk" class="dish-photo" src="drink-24.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🥥</div>
+<img alt="Mango Coconut Milk" class="dish-photo" src="drink-24.webp" loading="lazy" decoding="async"/><div class="dish-icon">🥥</div>
 <h3>Mango Coconut Milk</h3>
 <p>Mango and coconut milk blended into a tropical, creamy treat.</p>
 <div class="price">170 EGP / 23 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="fruit">
-<img alt="Fresh Green Grape Fruit Slush" class="dish-photo" src="drink-03.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍇</div>
+<img alt="Fresh Green Grape Fruit Slush" class="dish-photo" src="drink-03.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍇</div>
 <h3>Fresh Green Grape Fruit Slush</h3>
 <p>Real green grapes blended with ice for a refreshing slush.</p>
 <div class="price">170 EGP / 23 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="fruit">
-<img alt="Mixed Grapefruit Fruit Slush" class="dish-photo" src="drink-04.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍊</div>
+<img alt="Mixed Grapefruit Fruit Slush" class="dish-photo" src="drink-04.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍊</div>
 <h3>Mixed Grapefruit Fruit Slush</h3>
 <p>Citrusy grapefruit blended into a cool, tangy slush.</p>
 <div class="price">170 EGP / 23 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="fruit">
-<img alt="Fresh Peach Fruit Tea" class="dish-photo" src="drink-32.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍑</div>
+<img alt="Fresh Peach Fruit Tea" class="dish-photo" src="drink-32.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍑</div>
 <h3>Fresh Peach Fruit Tea</h3>
 <p>Sweet peach slices in a light, refreshing fruit tea.</p>
 <div class="price">150 EGP / 20 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="fruit">
-<img alt="Strawberry &amp; Fresh Orange Fruit Tea" class="dish-photo" src="drink-01.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍓</div>
+<img alt="Strawberry &amp; Fresh Orange Fruit Tea" class="dish-photo" src="drink-01.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍓</div>
 <h3>Strawberry &amp; Fresh Orange Fruit Tea</h3>
 <p>A vibrant mix of strawberry and fresh orange in iced tea.</p>
 <div class="price">150 EGP / 20 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="fruit">
-<img alt="Passion Fruit &amp; Mango Tea" class="dish-photo" src="drink-46.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🥭</div>
+<img alt="Passion Fruit &amp; Mango Tea" class="dish-photo" src="drink-46.webp" loading="lazy" decoding="async"/><div class="dish-icon">🥭</div>
 <h3>Passion Fruit &amp; Mango Tea</h3>
 <p>Tangy passion fruit meets sweet mango over iced tea.</p>
 <div class="price">140 EGP / 20 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="fruit">
-<img alt="Peach Oolong Lemon Tea" class="dish-photo" src="drink-20.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍋</div>
+<img alt="Peach Oolong Lemon Tea" class="dish-photo" src="drink-20.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍋</div>
 <h3>Peach Oolong Lemon Tea</h3>
 <p>Fragrant oolong tea with peach and a bright lemon twist.</p>
 <div class="price">140 EGP / 20 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="fruit">
-<img alt="Green Grape Lemon Tea" class="dish-photo" src="drink-31.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍋</div>
+<img alt="Green Grape Lemon Tea" class="dish-photo" src="drink-31.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍋</div>
 <h3>Green Grape Lemon Tea</h3>
 <p>Green grape and lemon over iced tea for a zesty sip.</p>
 <div class="price">140 EGP / 20 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="fruit">
-<img alt="Lemon Green Tea" class="dish-photo" src="drink-23.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍋</div>
+<img alt="Lemon Green Tea" class="dish-photo" src="drink-23.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍋</div>
 <h3>Lemon Green Tea</h3>
 <p>Classic iced green tea with fresh lemon.</p>
 <div class="price">120 EGP / 16 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="fruit">
-<img alt="Cream Lemon Smoothie" class="dish-photo" src="drink-40.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍋</div>
+<img alt="Cream Lemon Smoothie" class="dish-photo" src="drink-40.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍋</div>
 <h3>Cream Lemon Smoothie</h3>
 <p>Lemon blended with cream for a smooth, tangy treat.</p>
 <div class="price">160 EGP / 22 RMB <small>(M)</small></div>
 </article>
 <article class="dish" data-cat="fruit">
-<img alt="Cantaloupe Slush" class="dish-photo" src="drink-15.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍈</div>
+<img alt="Cantaloupe Slush" class="dish-photo" src="drink-15.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍈</div>
 <h3>Cantaloupe Slush</h3>
 <p>Sweet cantaloupe blended into a refreshing slush.</p>
 <div class="price">160 EGP / 22 RMB <small>(M)</small></div>
 </article>
 <article class="dish" data-cat="fruit">
-<img alt="Cream Strawberry Slush" class="dish-photo" src="drink-25.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍓</div>
+<img alt="Cream Strawberry Slush" class="dish-photo" src="drink-25.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍓</div>
 <h3>Cream Strawberry Slush</h3>
 <p>Strawberries and cream blended into a thick slush.</p>
 <div class="price">160 EGP / 22 RMB <small>(M)</small></div>
 </article>
 <article class="dish" data-cat="fruit">
-<img alt="Cream Grape Slush" class="dish-photo" src="drink-41.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍇</div>
+<img alt="Cream Grape Slush" class="dish-photo" src="drink-41.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍇</div>
 <h3>Cream Grape Slush</h3>
 <p>Grape and cream blended for a smooth, fruity slush.</p>
 <div class="price">160 EGP / 22 RMB <small>(M)</small></div>
@@ -531,73 +589,73 @@ footer{background:#0d0d0d;color:#8c8c8c;padding:46px 0 30px;font-size:13.5px}
 <!-- BOBA & MILK TEA -->
 <article class="dish" data-cat="boba">
 <span class="tag">Bestseller</span>
-<img alt="Brown Sugar Boba Milk Tea" class="dish-photo" src="drink-07.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🧋</div>
+<img alt="Brown Sugar Boba Milk Tea" class="dish-photo" src="drink-07.webp" loading="lazy" decoding="async"/><div class="dish-icon">🧋</div>
 <h3>Brown Sugar Boba Milk Tea</h3>
 <p>Caramelised brown sugar syrup, creamy milk and warm boba pearls.</p>
 <div class="price">140/120 EGP · 20/16 RMB <small>(L/M)</small></div>
 </article>
 <article class="dish" data-cat="boba">
-<img alt="Pudding Boba Milk Tea" class="dish-photo" src="drink-38.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🧋</div>
+<img alt="Pudding Boba Milk Tea" class="dish-photo" src="drink-38.webp" loading="lazy" decoding="async"/><div class="dish-icon">🧋</div>
 <h3>Pudding Boba Milk Tea</h3>
 <p>Classic milk tea with boba pearls and silky pudding.</p>
 <div class="price">160/140 EGP · 22/20 RMB <small>(L/M)</small></div>
 </article>
 <article class="dish" data-cat="boba">
-<img alt="Cream Green Grape Boba" class="dish-photo" src="drink-42.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍇</div>
+<img alt="Cream Green Grape Boba" class="dish-photo" src="drink-42.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍇</div>
 <h3>Cream Green Grape Boba</h3>
 <p>Green grape milk tea topped with a creamy foam.</p>
 <div class="price">160 EGP / 22 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="boba">
-<img alt="Cream Red Grape Boba" class="dish-photo" src="drink-26.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍇</div>
+<img alt="Cream Red Grape Boba" class="dish-photo" src="drink-26.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍇</div>
 <h3>Cream Red Grape Boba</h3>
 <p>Red grape milk tea with a rich cream layer.</p>
 <div class="price">160 EGP / 22 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="boba">
-<img alt="Cream Peach Boba" class="dish-photo" src="drink-43.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍑</div>
+<img alt="Cream Peach Boba" class="dish-photo" src="drink-43.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍑</div>
 <h3>Cream Peach Boba</h3>
 <p>Peach milk tea finished with a creamy foam.</p>
 <div class="price">160 EGP / 22 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="boba">
-<img alt="Cream Mango Boba" class="dish-photo" src="drink-48.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🥭</div>
+<img alt="Cream Mango Boba" class="dish-photo" src="drink-48.webp" loading="lazy" decoding="async"/><div class="dish-icon">🥭</div>
 <h3>Cream Mango Boba</h3>
 <p>Mango milk tea topped with a smooth cream foam.</p>
 <div class="price">160 EGP / 22 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="boba">
-<img alt="Strawberry Milk Shake" class="dish-photo" src="drink-02.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🥛</div>
+<img alt="Strawberry Milk Shake" class="dish-photo" src="drink-02.webp" loading="lazy" decoding="async"/><div class="dish-icon">🥛</div>
 <h3>Strawberry Milk Shake</h3>
 <p>Thick and creamy strawberry milkshake.</p>
 <div class="price">150 EGP / 20 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="boba">
-<img alt="Peach Light Milk Tea Boba" class="dish-photo" src="drink-18.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍑</div>
+<img alt="Peach Light Milk Tea Boba" class="dish-photo" src="drink-18.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍑</div>
 <h3>Peach Light Milk Tea Boba</h3>
 <p>Light peach milk tea with chewy boba pearls.</p>
 <div class="price">140 EGP / 20 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="boba">
-<img alt="Jasmine Light Milk Tea Boba" class="dish-photo" src="drink-16.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🌸</div>
+<img alt="Jasmine Light Milk Tea Boba" class="dish-photo" src="drink-16.webp" loading="lazy" decoding="async"/><div class="dish-icon">🌸</div>
 <h3>Jasmine Light Milk Tea Boba</h3>
 <p>Fragrant jasmine milk tea with boba pearls.</p>
 <div class="price">140 EGP / 20 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="boba">
-<img alt="Cream Peach Oolong Tea" class="dish-photo" src="drink-45.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍑</div>
+<img alt="Cream Peach Oolong Tea" class="dish-photo" src="drink-45.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍑</div>
 <h3>Cream Peach Oolong Tea</h3>
 <p>Oolong tea with peach and a cream foam top.</p>
 <div class="price">130 EGP / 17 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="boba">
-<img alt="Cream Jasmine Tea" class="dish-photo" src="drink-28.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🌸</div>
+<img alt="Cream Jasmine Tea" class="dish-photo" src="drink-28.webp" loading="lazy" decoding="async"/><div class="dish-icon">🌸</div>
 <h3>Cream Jasmine Tea</h3>
 <p>Jasmine tea topped with a light cream foam.</p>
 <div class="price">130 EGP / 17 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="boba">
-<img alt="Creamy Cocoa" class="dish-photo" src="drink-27.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍫</div>
+<img alt="Creamy Cocoa" class="dish-photo" src="drink-27.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍫</div>
 <h3>Creamy Cocoa</h3>
 <p>Rich cocoa blended with milk for a smooth, creamy drink.</p>
 <div class="price">160 EGP / 22 RMB <small>(M)</small></div>
@@ -605,43 +663,43 @@ footer{background:#0d0d0d;color:#8c8c8c;padding:46px 0 30px;font-size:13.5px}
 <!-- PISTACHIO SERIES -->
 <article class="dish" data-cat="pistachio">
 <span class="tag new">New</span>
-<img alt="Mango Pistachio" class="dish-photo" src="drink-14.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🥭</div>
+<img alt="Mango Pistachio" class="dish-photo" src="drink-14.webp" loading="lazy" decoding="async"/><div class="dish-icon">🥭</div>
 <h3>Mango Pistachio</h3>
 <p>Mango and pistachio blended into a unique, nutty treat.</p>
 <div class="price">170 EGP / 23 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="pistachio">
-<img alt="Pistachio Spanish Latte" class="dish-photo" src="drink-13.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">☕</div>
+<img alt="Pistachio Spanish Latte" class="dish-photo" src="drink-13.webp" loading="lazy" decoding="async"/><div class="dish-icon">☕</div>
 <h3>Pistachio Spanish Latte</h3>
 <p>Spanish latte with a rich pistachio twist.</p>
 <div class="price">170 EGP / 23 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="pistachio">
-<img alt="Pistachio Cream Peach Oolong Tea" class="dish-photo" src="drink-44.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍑</div>
+<img alt="Pistachio Cream Peach Oolong Tea" class="dish-photo" src="drink-44.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍑</div>
 <h3>Pistachio Cream Peach Oolong Tea</h3>
 <p>Peach oolong tea with pistachio cream foam.</p>
 <div class="price">130 EGP / 17 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="pistachio">
-<img alt="Pistachio Cream Jasmine Tea" class="dish-photo" src="drink-90.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🌸</div>
+<img alt="Pistachio Cream Jasmine Tea" class="dish-photo" src="drink-36.webp" loading="lazy" decoding="async"/><div class="dish-icon">🌸</div>
 <h3>Pistachio Cream Jasmine Tea</h3>
 <p>Jasmine tea topped with pistachio cream foam.</p>
 <div class="price">130 EGP / 17 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="pistachio">
-<img alt="Strawberry Pistachio" class="dish-photo" src="drink-10.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍓</div>
+<img alt="Strawberry Pistachio" class="dish-photo" src="drink-10.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍓</div>
 <h3>Strawberry Pistachio</h3>
 <p>Strawberry and pistachio blended into a creamy delight.</p>
 <div class="price">170/150 EGP · 23/20 RMB <small>(L/M)</small></div>
 </article>
 <article class="dish" data-cat="pistachio">
-<img alt="Cocoa Pistachio" class="dish-photo" src="drink-11.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍫</div>
+<img alt="Cocoa Pistachio" class="dish-photo" src="drink-11.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍫</div>
 <h3>Cocoa Pistachio</h3>
 <p>Cocoa and pistachio combined for a rich, nutty drink.</p>
 <div class="price">160 EGP / 22 RMB <small>(M)</small></div>
 </article>
 <article class="dish" data-cat="pistachio">
-<img alt="Coffee Pistachio" class="dish-photo" src="drink-12.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">☕</div>
+<img alt="Coffee Pistachio" class="dish-photo" src="drink-12.webp" loading="lazy" decoding="async"/><div class="dish-icon">☕</div>
 <h3>Coffee Pistachio</h3>
 <p>Coffee blended with pistachio for a unique flavour.</p>
 <div class="price">120 EGP / 16 RMB <small>(M)</small></div>
@@ -649,68 +707,68 @@ footer{background:#0d0d0d;color:#8c8c8c;padding:46px 0 30px;font-size:13.5px}
 <!-- COFFEE & TEA -->
 <article class="dish" data-cat="coffee">
 <span class="tag">Bestseller</span>
-<img alt="Spanish Latte" class="dish-photo" src="drink-34.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">☕</div>
+<img alt="Spanish Latte" class="dish-photo" src="drink-34.webp" loading="lazy" decoding="async"/><div class="dish-icon">☕</div>
 <h3>Spanish Latte</h3>
 <p>Espresso, condensed milk and steamed milk — sweet and strong.</p>
 <div class="price">150/120 EGP · 20/16 RMB <small>(L/M)</small></div>
 </article>
 <article class="dish" data-cat="coffee">
-<img alt="Creamy Coffee" class="dish-photo" src="drink-27.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">☕</div>
+<img alt="Creamy Coffee" class="dish-photo" src="drink-27.webp" loading="lazy" decoding="async"/><div class="dish-icon">☕</div>
 <h3>Creamy Coffee</h3>
 <p>Smooth, creamy coffee for a rich pick-me-up.</p>
 <div class="price">120 EGP / 16 RMB <small>(M)</small></div>
 </article>
 <article class="dish" data-cat="coffee">
-<img alt="Coffee Slush" class="dish-photo" src="drink-17.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🧊</div>
+<img alt="Coffee Slush" class="dish-photo" src="drink-17.webp" loading="lazy" decoding="async"/><div class="dish-icon">🧊</div>
 <h3>Coffee Slush</h3>
 <p>Blended iced coffee for a refreshing caffeine kick.</p>
 <div class="price">160 EGP / 22 RMB <small>(M)</small></div>
 </article>
 <article class="dish" data-cat="coffee">
-<img alt="Orange Black Tea" class="dish-photo" src="drink-21.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍊</div>
+<img alt="Orange Black Tea" class="dish-photo" src="drink-21.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍊</div>
 <h3>Orange Black Tea</h3>
 <p>Black tea infused with fresh orange.</p>
 <div class="price">130 EGP / 17 RMB <small>(L)</small></div>
 </article>
 <article class="dish" data-cat="coffee">
-<img alt="Lemon Black Tea" class="dish-photo" src="drink-22.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍋</div>
+<img alt="Lemon Black Tea" class="dish-photo" src="drink-22.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍋</div>
 <h3>Lemon Black Tea</h3>
 <p>Classic black tea with a bright lemon finish.</p>
 <div class="price">120 EGP / 16 RMB <small>(M)</small></div>
 </article>
 <!-- TOPPINGS -->
 <article class="dish" data-cat="topping">
-<img alt="Pistachio Foam" class="dish-photo" src="drink-30.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🥜</div>
+<img alt="Pistachio Foam" class="dish-photo" src="drink-30.webp" loading="lazy" decoding="async"/><div class="dish-icon">🥜</div>
 <h3>Pistachio Foam</h3>
 <p>Rich and nutty pistachio cream foam.</p>
 <div class="price">20 EGP</div>
 </article>
 <article class="dish" data-cat="topping">
-<img alt="Cream Foam" class="dish-photo" src="drink-29.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🥛</div>
+<img alt="Cream Foam" class="dish-photo" src="drink-29.webp" loading="lazy" decoding="async"/><div class="dish-icon">🥛</div>
 <h3>Cream Foam</h3>
 <p>Classic sweet cream foam topping.</p>
 <div class="price">20 EGP</div>
 </article>
 <article class="dish" data-cat="topping">
-<img alt="Crystal Jelly Boba" class="dish-photo" src="drink-05.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">✨</div>
+<img alt="Crystal Jelly Boba" class="dish-photo" src="drink-05.webp" loading="lazy" decoding="async"/><div class="dish-icon">✨</div>
 <h3>Crystal Jelly Boba</h3>
 <p>Light, crunchy crystal jelly pearls.</p>
 <div class="price">20 EGP</div>
 </article>
 <article class="dish" data-cat="topping">
-<img alt="Boba" class="dish-photo" src="drink-09.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">⚫</div>
+<img alt="Boba" class="dish-photo" src="drink-09.webp" loading="lazy" decoding="async"/><div class="dish-icon">⚫</div>
 <h3>Boba</h3>
 <p>Chewy tapioca pearls.</p>
 <div class="price">20 EGP</div>
 </article>
 <article class="dish" data-cat="topping">
-<img alt="Sago" class="dish-photo" src="drink-19.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">⚪</div>
+<img alt="Sago" class="dish-photo" src="drink-19.webp" loading="lazy" decoding="async"/><div class="dish-icon">⚪</div>
 <h3>Sago</h3>
 <p>Small, soft sago pearls.</p>
 <div class="price">20 EGP</div>
 </article>
 <article class="dish" data-cat="topping">
-<img alt="Pudding" class="dish-photo" src="drink-47.jpeg" loading="lazy" decoding="async"/><div class="dish-icon">🍮</div>
+<img alt="Pudding" class="dish-photo" src="drink-47.webp" loading="lazy" decoding="async"/><div class="dish-icon">🍮</div>
 <h3>Pudding</h3>
 <p>Silky, sweet pudding cubes.</p>
 <div class="price">20 EGP</div>
@@ -868,13 +926,13 @@ footer{background:#0d0d0d;color:#8c8c8c;padding:46px 0 30px;font-size:13.5px}
     <div class="nfd-slider">
       <button class="nfd-arrow l" aria-label="Previous">‹</button>
       <div class="nfd-track">
-        <div class="nfd-hl"><div class="nfd-ring"><span><img src="logo-anyma.jpg" alt="Anyma"></span></div><b>Anyma</b></div>
-        <div class="nfd-hl"><div class="nfd-ring"><span><img src="logo-tiesto.jpg" alt="Tiësto"></span></div><b>Tiësto</b></div>
-        <div class="nfd-hl"><div class="nfd-ring"><span><img src="logo-wegz.jpg" alt="WEGZ × PUBG"></span></div><b>WEGZ × PUBG</b></div>
-        <div class="nfd-hl"><div class="nfd-ring"><span><img src="logo-hekma.jpg" alt="Beit El Hekma"></span></div><b>Beit El Hekma</b></div>
-        <div class="nfd-hl"><div class="nfd-ring"><span><img src="logo-miu.jpg" alt="MIU Theatre"></span></div><b>MIU Theatre</b></div>
-        <div class="nfd-hl"><div class="nfd-ring"><span><img src="logo-huawei.jpg" alt="Huawei"></span></div><b>Huawei</b></div>
-        <div class="nfd-hl"><div class="nfd-ring"><span><img src="logo-garden.jpg" alt="Women's Day"></span></div><b>Women's Day</b></div>
+        <div class="nfd-hl"><div class="nfd-ring"><span><img src="logo-anyma.webp" alt="Anyma"></span></div><b>Anyma</b></div>
+        <div class="nfd-hl"><div class="nfd-ring"><span><img src="logo-tiesto.webp" alt="Tiësto"></span></div><b>Tiësto</b></div>
+        <div class="nfd-hl"><div class="nfd-ring"><span><img src="logo-wegz.webp" alt="WEGZ × PUBG"></span></div><b>WEGZ × PUBG</b></div>
+        <div class="nfd-hl"><div class="nfd-ring"><span><img src="logo-hekma.webp" alt="Beit El Hekma"></span></div><b>Beit El Hekma</b></div>
+        <div class="nfd-hl"><div class="nfd-ring"><span><img src="logo-miu.webp" alt="MIU Theatre"></span></div><b>MIU Theatre</b></div>
+        <div class="nfd-hl"><div class="nfd-ring"><span><img src="logo-huawei.webp" alt="Huawei"></span></div><b>Huawei</b></div>
+        <div class="nfd-hl"><div class="nfd-ring"><span><img src="logo-garden.webp" alt="Women's Day"></span></div><b>Women's Day</b></div>
       </div>
       <button class="nfd-arrow r" aria-label="Next">›</button>
     </div>
@@ -882,25 +940,25 @@ footer{background:#0d0d0d;color:#8c8c8c;padding:46px 0 30px;font-size:13.5px}
     <div class="nfd-gal">
       <button class="nfd-garrow l" aria-label="Previous photos">‹</button>
       <div class="nfd-gallery">
-      <figure data-full="pyramids-01.jpg"><img src="pyramids-01.jpg" width="800" height="800" decoding="async" alt="Pyramids of Giza" loading="lazy"><figcaption>Pyramids of Giza</figcaption></figure>
-      <figure data-full="wegz-01.jpg"><img src="wegz-01.jpg" width="600" height="800" decoding="async" alt="WEGZ × PUBG Mobile × Neferdidi" loading="lazy"><figcaption>WEGZ × PUBG Mobile × Neferdidi</figcaption></figure>
-      <figure data-full="spring-01.jpg"><img src="spring-01.jpg" width="800" height="800" decoding="async" alt="Beit El Hekma · Chinese Spring Festival 2026" loading="lazy"><figcaption>Beit El Hekma · Chinese Spring Festival 2026</figcaption></figure>
-      <figure data-full="pyramids-02.jpg"><img src="pyramids-02.jpg" width="800" height="800" decoding="async" alt="Pyramids of Giza" loading="lazy"><figcaption>Pyramids of Giza</figcaption></figure>
-      <figure data-full="garden-01.jpg"><img src="garden-01.jpg" width="800" height="800" decoding="async" alt="Women's Day · International Garden" loading="lazy"><figcaption>Women's Day · International Garden</figcaption></figure>
-      <figure data-full="wegz-02.jpg"><img src="wegz-02.jpg" width="600" height="800" decoding="async" alt="WEGZ × PUBG Mobile × Neferdidi" loading="lazy"><figcaption>WEGZ × PUBG Mobile × Neferdidi</figcaption></figure>
-      <figure data-full="spring-02.jpg"><img src="spring-02.jpg" width="800" height="800" decoding="async" alt="Beit El Hekma · Chinese Spring Festival 2026" loading="lazy"><figcaption>Beit El Hekma · Chinese Spring Festival 2026</figcaption></figure>
-      <figure data-full="pyramids-03.jpg"><img src="pyramids-03.jpg" width="800" height="800" decoding="async" alt="Pyramids of Giza" loading="lazy"><figcaption>Pyramids of Giza</figcaption></figure>
-      <figure data-full="garden-02.jpg"><img src="garden-02.jpg" width="800" height="800" decoding="async" alt="Women's Day · International Garden" loading="lazy"><figcaption>Women's Day · International Garden</figcaption></figure>
-      <figure data-full="wegz-03.jpg"><img src="wegz-03.jpg" width="600" height="800" decoding="async" alt="WEGZ × PUBG Mobile × Neferdidi" loading="lazy"><figcaption>WEGZ × PUBG Mobile × Neferdidi</figcaption></figure>
-      <figure data-full="spring-03.jpg"><img src="spring-03.jpg" width="800" height="800" decoding="async" alt="Beit El Hekma · Chinese Spring Festival 2026" loading="lazy"><figcaption>Beit El Hekma · Chinese Spring Festival 2026</figcaption></figure>
-      <figure data-full="pyramids-04.jpg"><img src="pyramids-04.jpg" width="800" height="800" decoding="async" alt="Pyramids of Giza" loading="lazy"><figcaption>Pyramids of Giza</figcaption></figure>
-      <figure data-full="wegz-04.jpg"><img src="wegz-04.jpg" width="600" height="800" decoding="async" alt="WEGZ × PUBG Mobile × Neferdidi" loading="lazy"><figcaption>WEGZ × PUBG Mobile × Neferdidi</figcaption></figure>
-      <figure data-full="garden-03.jpg"><img src="garden-03.jpg" width="800" height="800" decoding="async" alt="Women's Day · International Garden" loading="lazy"><figcaption>Women's Day · International Garden</figcaption></figure>
-      <figure data-full="pyramids-05.jpg"><img src="pyramids-05.jpg" width="800" height="800" decoding="async" alt="Pyramids of Giza" loading="lazy"><figcaption>Pyramids of Giza</figcaption></figure>
-      <figure data-full="pyramids-08.jpg"><img src="pyramids-08.jpg" width="800" height="800" decoding="async" alt="Pyramids of Giza" loading="lazy"><figcaption>Pyramids of Giza</figcaption></figure>
-      <figure data-full="pyramids-09.jpg"><img src="pyramids-09.jpg" width="800" height="800" decoding="async" alt="Pyramids of Giza" loading="lazy"><figcaption>Pyramids of Giza</figcaption></figure>
-      <figure data-full="pyramids-10.jpg"><img src="pyramids-10.jpg" width="800" height="800" decoding="async" alt="Pyramids of Giza" loading="lazy"><figcaption>Pyramids of Giza</figcaption></figure>
-      <figure data-full="garden-04.jpg"><img src="garden-04.jpg" width="800" height="800" decoding="async" alt="Women's Day · International Garden" loading="lazy"><figcaption>Women's Day · International Garden</figcaption></figure>
+      <figure data-full="pyramids-01.webp"><img src="pyramids-01.webp" width="800" height="800" decoding="async" alt="Pyramids of Giza" loading="lazy"><figcaption>Pyramids of Giza</figcaption></figure>
+      <figure data-full="wegz-01.webp"><img src="wegz-01.webp" width="600" height="800" decoding="async" alt="WEGZ × PUBG Mobile × Neferdidi" loading="lazy"><figcaption>WEGZ × PUBG Mobile × Neferdidi</figcaption></figure>
+      <figure data-full="spring-01.webp"><img src="spring-01.webp" width="800" height="800" decoding="async" alt="Beit El Hekma · Chinese Spring Festival 2026" loading="lazy"><figcaption>Beit El Hekma · Chinese Spring Festival 2026</figcaption></figure>
+      <figure data-full="pyramids-02.webp"><img src="pyramids-02.webp" width="800" height="800" decoding="async" alt="Pyramids of Giza" loading="lazy"><figcaption>Pyramids of Giza</figcaption></figure>
+      <figure data-full="garden-01.webp"><img src="garden-01.webp" width="800" height="800" decoding="async" alt="Women's Day · International Garden" loading="lazy"><figcaption>Women's Day · International Garden</figcaption></figure>
+      <figure data-full="wegz-02.webp"><img src="wegz-02.webp" width="600" height="800" decoding="async" alt="WEGZ × PUBG Mobile × Neferdidi" loading="lazy"><figcaption>WEGZ × PUBG Mobile × Neferdidi</figcaption></figure>
+      <figure data-full="spring-02.webp"><img src="spring-02.webp" width="800" height="800" decoding="async" alt="Beit El Hekma · Chinese Spring Festival 2026" loading="lazy"><figcaption>Beit El Hekma · Chinese Spring Festival 2026</figcaption></figure>
+      <figure data-full="pyramids-03.webp"><img src="pyramids-03.webp" width="800" height="800" decoding="async" alt="Pyramids of Giza" loading="lazy"><figcaption>Pyramids of Giza</figcaption></figure>
+      <figure data-full="garden-02.webp"><img src="garden-02.webp" width="800" height="800" decoding="async" alt="Women's Day · International Garden" loading="lazy"><figcaption>Women's Day · International Garden</figcaption></figure>
+      <figure data-full="wegz-03.webp"><img src="wegz-03.webp" width="600" height="800" decoding="async" alt="WEGZ × PUBG Mobile × Neferdidi" loading="lazy"><figcaption>WEGZ × PUBG Mobile × Neferdidi</figcaption></figure>
+      <figure data-full="spring-03.webp"><img src="spring-03.webp" width="800" height="800" decoding="async" alt="Beit El Hekma · Chinese Spring Festival 2026" loading="lazy"><figcaption>Beit El Hekma · Chinese Spring Festival 2026</figcaption></figure>
+      <figure data-full="pyramids-04.webp"><img src="pyramids-04.webp" width="800" height="800" decoding="async" alt="Pyramids of Giza" loading="lazy"><figcaption>Pyramids of Giza</figcaption></figure>
+      <figure data-full="wegz-04.webp"><img src="wegz-04.webp" width="600" height="800" decoding="async" alt="WEGZ × PUBG Mobile × Neferdidi" loading="lazy"><figcaption>WEGZ × PUBG Mobile × Neferdidi</figcaption></figure>
+      <figure data-full="garden-03.webp"><img src="garden-03.webp" width="800" height="800" decoding="async" alt="Women's Day · International Garden" loading="lazy"><figcaption>Women's Day · International Garden</figcaption></figure>
+      <figure data-full="pyramids-05.webp"><img src="pyramids-05.webp" width="800" height="800" decoding="async" alt="Pyramids of Giza" loading="lazy"><figcaption>Pyramids of Giza</figcaption></figure>
+      <figure data-full="pyramids-08.webp"><img src="pyramids-08.webp" width="800" height="800" decoding="async" alt="Pyramids of Giza" loading="lazy"><figcaption>Pyramids of Giza</figcaption></figure>
+      <figure data-full="pyramids-09.webp"><img src="pyramids-09.webp" width="800" height="800" decoding="async" alt="Pyramids of Giza" loading="lazy"><figcaption>Pyramids of Giza</figcaption></figure>
+      <figure data-full="pyramids-10.webp"><img src="pyramids-10.webp" width="800" height="800" decoding="async" alt="Pyramids of Giza" loading="lazy"><figcaption>Pyramids of Giza</figcaption></figure>
+      <figure data-full="garden-04.webp"><img src="garden-04.webp" width="800" height="800" decoding="async" alt="Women's Day · International Garden" loading="lazy"><figcaption>Women's Day · International Garden</figcaption></figure>
     </div>
       <button class="nfd-garrow r" aria-label="Next photos">›</button>
     </div>
@@ -913,6 +971,24 @@ footer{background:#0d0d0d;color:#8c8c8c;padding:46px 0 30px;font-size:13.5px}
     <button class="nfd-next" aria-label="Next">›</button>
     <div class="nfd-cap"></div>
   </div>
+<!-- ================= FRANCHISE ================= -->
+<section class="section franchise" id="franchise">
+<div class="container">
+<div class="franchise-box reveal">
+<div>
+<div class="eyebrow">Franchise</div>
+<h2>Come join us. Be one of us.</h2>
+<p>Become part of the Neferdidi family and open your own branch. Get in touch with us directly by phone or WhatsApp and we'll tell you everything you need to know.</p>
+<a class="franchise-phone" href="tel:+201275759001">01275759001</a>
+<div class="franchise-actions">
+<a class="btn btn-primary" href="tel:+201275759001">Call us</a>
+<a class="btn btn-wa" href="https://wa.me/201275759001?text=Hello%20Neferdidi%2C%20I%27m%20interested%20in%20a%20franchise." rel="noopener" target="_blank">WhatsApp</a>
+</div>
+</div>
+<div class="franchise-art"><img alt="Neferdidi mascot" src="neferdidi-mascot.webp" loading="lazy" decoding="async"/></div>
+</div>
+</div>
+</section>
 <!-- ================= CONTACT ================= -->
 <section class="section contact" id="contact">
 <div class="container">
@@ -962,6 +1038,7 @@ footer{background:#0d0d0d;color:#8c8c8c;padding:46px 0 30px;font-size:13.5px}
 <a href="#menu">Menu</a>
 <a href="#branches">Branches</a>
 <a href="#events">Events</a>
+<a href="#franchise">Franchise</a>
 <a href="#contact">Contact</a>
 </div>
 <div class="footer-col">
@@ -994,12 +1071,19 @@ burger.addEventListener('click', () => {
   burger.classList.toggle('active', open);
   burger.setAttribute('aria-expanded', open);
 });
+function closeMobileNav() {
+  nav.classList.remove('open');
+  burger.classList.remove('active');
+  burger.setAttribute('aria-expanded', 'false');
+  burger.setAttribute('aria-label', 'Open menu');
+}
+burger.addEventListener('click', () => burger.setAttribute('aria-label', nav.classList.contains('open') ? 'Close menu' : 'Open menu'));
 nav.addEventListener('click', e => {
-  if (e.target.tagName === 'A') {
-    nav.classList.remove('open');
-    burger.classList.remove('active');
-    burger.setAttribute('aria-expanded', 'false');
-  }
+  if (e.target.closest('a')) closeMobileNav();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
+document.addEventListener('click', e => {
+  if (nav.classList.contains('open') && !nav.contains(e.target) && !burger.contains(e.target)) closeMobileNav();
 });
 
 /* ---------- Menu: horizontal collections + instant search ---------- */
@@ -1136,6 +1220,14 @@ nav.addEventListener('click', e => {
   if (searchInput) searchInput.addEventListener('input', applyMenuSearch);
   applyMenuSearch();
 })();
+
+/* ---------- Global image fallback ---------- */
+document.querySelectorAll('img').forEach(image => {
+  image.addEventListener('error', () => {
+    image.classList.add('image-unavailable');
+    image.style.visibility = 'hidden';
+  }, { once: true });
+});
 
 /* ---------- Branch search + filter ---------- */
 const search = document.getElementById('search');
